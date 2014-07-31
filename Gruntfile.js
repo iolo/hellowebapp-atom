@@ -5,13 +5,9 @@ module.exports = function (grunt) {
 
     var srcDir = path.resolve('src');
     var buildDir = path.resolve('build');
-    console.log('****srcDir:', srcDir);
-    console.log('****buildDir:', buildDir);
 
     var atomCmd = path.join(buildDir, (process.platform == 'darwin') ? 'Atom.app/Contents/MacOS/Atom' : 'atom-shell/atom');
     var atomAppDir = path.join(buildDir, (process.platform == 'darwin') ? 'Atom.app/Contents/Resources' : 'atom-shell/resources', 'app');
-    console.log('****atomCmd:', atomCmd);
-    console.log('****atomAppDir:', atomAppDir);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -116,16 +112,16 @@ module.exports = function (grunt) {
             coffee: {
                 files: ['<%=srcDir%>/**/*.coffee'],
                 tasks: ['coffee:app']
-            },
+            }
         },
         clean: {
             build: atomAppDir
         },
         'download-atom-shell': {
             version: '0.15.0',
-            outputDir: buildDir,
-        },
-        /*'build-atom-shell-app': {
+            outputDir: buildDir
+        }/*,
+        'build-atom-shell-app': {
          options: {
          platforms: ['darwin', 'win32', 'linux']
          }
@@ -151,13 +147,14 @@ module.exports = function (grunt) {
         grunt.util.spawn({ cmd: atomCmd });
     });
 
-    /*grunt.registerTask('atom:package', function () {
-     grunt.file.delete(atomAppDir);
-     grunt.file.recurse(srcDir, function (abspath, rootdir, subdir, filename) {
-     console.log('copy', abspath, '-->', path.join(atomAppDir, subdir||'', filename));
-     grunt.file.copy(abspath, path.join(atomAppDir, subdir||'', filename));
-     });
-     });*/
+    grunt.registerTask('atom:package', function () {
+        if (process.platform == 'darwin') {
+            grunt.util.spawn({ cmd: 'scripts/make-dmg.sh' });
+        } else {
+            // TODO: support built window msi/linux zip package...
+            grunt.log.error('unsupported platform: ' + process.platform);
+        }
+    });
 
     grunt.registerTask('default', ['build']);
     grunt.registerTask('test', ['jshint']);

@@ -2,6 +2,7 @@
     "name": "hellowebapp-atom",
     "version": "0.0.1",
     "description": "boilerplate webapp using atom-shell",
+    "homepage": "https://github.com/iolo/hellowebapp-atom",
     "author": "Dongsu Jang <iolothebard@gmail.com>",
     "repository": {
         "type": "git",

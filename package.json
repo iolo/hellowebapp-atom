@@ -1,31 +1,32 @@
 {
-    "name": "hellowebapp-atom",
-    "version": "0.0.1",
-    "description": "boilerplate webapp using atom-shell",
-    "homepage": "https://github.com/iolo/hellowebapp-atom",
-    "author": "Dongsu Jang <iolothebard@gmail.com>",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:iolo/hellowebapp-atom.git"
-    },
-    "license": "MIT",
-    "engines": {
-        "node": "~0.10"
-    },
-    "dependencies": {
-        "debug": "~1.0.2"
-    },
-    "devDependencies": {
-        "grunt": "^0.4.5",
-        "grunt-contrib-clean": "latest",
-        "grunt-contrib-coffee": "latest",
-        "grunt-contrib-concat": "latest",
-        "grunt-contrib-copy": "latest",
-        "grunt-contrib-jade": "latest",
-        "grunt-contrib-jshint": "latest",
-        "grunt-contrib-less": "latest",
-        "grunt-contrib-uglify": "latest",
-        "grunt-contrib-watch": "latest",
-        "grunt-download-atom-shell": "latest"
-    }
+  "name": "hellowebapp-atom",
+  "version": "0.0.2",
+  "description": "boilerplate webapp using atom-shell",
+  "homepage": "https://github.com/iolo/hellowebapp-atom",
+  "author": "Dongsu Jang <iolothebard@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:iolo/hellowebapp-atom.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "~0.10"
+  },
+  "dependencies": {
+    "debug": "~1.0.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-atom-shell-app-builder": "0.0.2",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-coffee": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-jade": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-download-atom-shell": "latest"
+  }
 }

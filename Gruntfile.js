@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     var srcDir = path.resolve('src');
     var buildDir = path.resolve('build');
 
-    var atomCmd = path.join(buildDir, (process.platform == 'darwin') ? 'Atom.app/Contents/MacOS/Atom' : 'atom-shell/atom');
+    var atomCmd = path.join(buildDir, (process.platform == 'darwin') ? 'Atom.app/Contents/MacOS/Atom' : 'atom');
     var atomAppDir = path.join(buildDir, (process.platform == 'darwin') ? 'Atom.app/Contents/Resources' : 'atom-shell/resources', 'app');
 
     grunt.initConfig({
